@@ -105,7 +105,7 @@ module.exports = {
   Mutation: {
     postQuestion: async (_, args, context) => {
       const loggedUser = authChecker(context);
-      const { title, body, tags } = args;
+      const { title, body, tags } = args; 
 
       const { errors, valid } = questionValidator(title, body, tags);
       if (!valid) {

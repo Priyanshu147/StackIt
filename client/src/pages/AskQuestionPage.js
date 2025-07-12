@@ -46,6 +46,7 @@ const AskQuestionPage = () => {
     resolver: yupResolver(validationSchema),
   });
 
+  // Mutations for posting and editing questions
   const [addQuestion, { loading: addQuesLoading }] = useMutation(
     POST_QUESTION,
     {
@@ -64,6 +65,7 @@ const AskQuestionPage = () => {
     }
   );
 
+  // Handle submitting new question
   const postQuestion = ({ title, body }) => {
     if (tags.length === 0) return setErrorMsg('Atleast one tag must be added.');
 
@@ -77,6 +79,7 @@ const AskQuestionPage = () => {
     });
   };
 
+  // Handle editing existing question
   const editQuestion = ({ title, body }) => {
     if (tags.length === 0) return setErrorMsg('Atleast one tag must be added.');
 
@@ -90,6 +93,7 @@ const AskQuestionPage = () => {
     });
   };
 
+  // Tag input handler (adds tag on space)
   const handleTags = (e) => {
     if (!e || (!e.target.value && e.target.value !== '')) return;
     const value = e.target.value.toLowerCase().trim();
@@ -134,6 +138,7 @@ const AskQuestionPage = () => {
           editValues ? handleSubmit(editQuestion) : handleSubmit(postQuestion)
         }
       >
+        {/* Title Field */}
         <div className={classes.inputWrapper}>
           <Typography variant="caption" color="secondary">
             Be specific and imagine you’re asking a question to another person
@@ -160,6 +165,8 @@ const AskQuestionPage = () => {
             }}
           />
         </div>
+
+        {/* Body Field */}
         <div className={classes.inputWrapper}>
           <Typography variant="caption" color="secondary">
             Include all the information someone would need to answer your
@@ -189,6 +196,8 @@ const AskQuestionPage = () => {
             }}
           />
         </div>
+
+        {/* Tags Field */}
         <div className={classes.inputWrapper}>
           <Typography variant="caption" color="secondary">
             Add up to 5 tags to describe what your question is about
@@ -229,6 +238,8 @@ const AskQuestionPage = () => {
             }
           />
         </div>
+
+        {/* Submit Button */}
         <Button
           type="submit"
           color="primary"
@@ -239,6 +250,8 @@ const AskQuestionPage = () => {
         >
           {editValues ? 'Update Your Question' : 'Post Your Question'}
         </Button>
+
+        {/* Error Message */}
         <ErrorMessage
           errorMsg={errorMsg}
           clearErrorMsg={() => setErrorMsg(null)}

@@ -224,17 +224,17 @@ export const useQuesCardStyles = makeStyles(
     root: {
       borderBottom: `1px solid ${theme.palette.divider}`,
       display: "flex",
-      padding: theme.spacing(3, 2), // Increased horizontal padding for better spacing
+      padding: theme.spacing(3, 2), // Increased horizontal padding for better spacing.
       borderRadius: 0,
       transition: "all 0.2s ease",
       "&:hover": {
-        backgroundColor: theme.palette.action.hover, // Standard Material-UI hover color
-        boxShadow: `0px 4px 8px rgba(0, 0, 0, 0.05)`, // Subtle shadow on hover
+        backgroundColor: theme.palette.action.hover, // Standard Material-UI hover color.
+        boxShadow: `0px 4px 8px rgba(0, 0, 0, 0.05)`, // Subtle shadow on hover.
       },
       "&:last-child": {
         borderBottom: "none",
       },
-      boxShadow: `0px 2px 4px rgba(0, 0, 0, 0.02)`, // Default subtle shadow for card-like feel
+      boxShadow: `0px 2px 4px rgba(0, 0, 0, 0.02)`, // Default subtle shadow for card-like feel.
     },
     infoWrapper: {
       width: "120px",
@@ -243,10 +243,10 @@ export const useQuesCardStyles = makeStyles(
       flexDirection: "column",
       alignItems: "center",
       gap: theme.spacing(1),
-      // backgroundColor: theme.palette.action.selected, // Light background for visual separation
+      // backgroundColor: theme.palette.action.selected, // Light background for visual separation.
       borderRadius: theme.shape.borderRadius,
-      marginRight: theme.spacing(2), // Space between info and details
-      flexShrink: 0, // Prevent shrinking on smaller screens
+      marginRight: theme.spacing(2), // Space between info and details.
+      flexShrink: 0, // Prevent shrinking on smaller screens.
       [theme.breakpoints.down("sm")]: {
         width: "100px",
       },
@@ -256,13 +256,13 @@ export const useQuesCardStyles = makeStyles(
       },
     },
     mainText: {
-      fontSize: "1.2rem", // Slightly larger for emphasis
-      fontWeight: 700, // Bolder for key numbers
+      fontSize: "1.2rem", // Slightly larger for emphasis.
+      fontWeight: 700, // Bolder for key numbers.
       textAlign: "center",
       color: theme.palette.text.primary,
     },
     title: {
-      fontSize: "1.35rem", // Slightly larger title for prominence
+      fontSize: "1.35rem", // Slightly larger title for prominence.
       fontWeight: 600,
       wordWrap: "break-word",
       textDecoration: "none",
@@ -296,9 +296,9 @@ export const useQuesCardStyles = makeStyles(
     tag: {
       fontSize: "0.75rem",
       padding: theme.spacing(0.5, 1),
-      border: `1px solid ${theme.palette.divider}`, // Subtle border for tags
+      border: `1px solid ${theme.palette.divider}`, // Subtle border for tags.
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: theme.palette.background.paper, // Ensure tags have a background
+      backgroundColor: theme.palette.background.paper, // Ensure tags have a background.
     },
     bottomWrapper: {
       display: "flex",
@@ -306,7 +306,7 @@ export const useQuesCardStyles = makeStyles(
       justifyContent: "space-between",
       alignItems: "center",
       gap: theme.spacing(1),
-      marginTop: theme.spacing(1), // Add some top margin
+      marginTop: theme.spacing(1), // Add some top margin.
     },
     byUserWrapper: {
       display: "flex",

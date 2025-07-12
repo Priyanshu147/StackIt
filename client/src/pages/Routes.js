@@ -35,32 +35,39 @@ const Routes = () => {
               <Redirect to="/" />
             )}
           </Route>
+
           <Route exact path="/tags">
             <NavMenuDesktop />
             <AllTagsPage />
           </Route>
+
           <Route exact path="/users">
             <NavMenuDesktop />
             <AllUsersPage />
           </Route>
+
           <Route exact path="/user/:username">
             <NavMenuDesktop />
             <UserPage />
           </Route>
+
           <Route exact path="/questions/:quesId">
             <NavMenuDesktop />
             <QuestionPage />
           </Route>
+
           <Route exact path="/tags/:tagName">
             <NavMenuDesktop />
             <QuesListPage tagFilterActive={true} />
             <RightSidePanel />
           </Route>
+
           <Route exact path="/search/:query">
             <NavMenuDesktop />
             <QuesListPage searchFilterActive={true} />
             <RightSidePanel />
           </Route>
+
           <Route>
             <NavMenuDesktop />
             <NotFoundPage />

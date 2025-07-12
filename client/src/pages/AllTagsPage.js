@@ -12,17 +12,20 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const AllTagsPage = () => {
   const { notify } = useStateContext();
+
+  // Fetch all tags with error notification
   const { data, loading } = useQuery(GET_ALL_TAGS, {
-    onError: (err) => {
-      notify(getErrorMsg(err), 'error');
-    },
+    onError: (err) => notify(getErrorMsg(err), 'error'),
   });
 
+  // Filter input state
   const [filterInput, setFilterInput] = useState('');
+
   const classes = useTagsPageStyles();
 
   return (
     <div className={classes.root}>
+      {/* Page title and description */}
       <Typography variant="h5" className={classes.titleText} color="secondary">
         Tags
       </Typography>
@@ -32,6 +35,8 @@ const AllTagsPage = () => {
         the right tags makes it easier for others to find and answer your
         question.
       </Typography>
+
+      {/* Filter input */}
       <TextField
         className={classes.filterInput}
         value={filterInput}
@@ -47,6 +52,8 @@ const AllTagsPage = () => {
           ),
         }}
       />
+
+      {/* Display tags or loading spinner */}
       {!loading && data ? (
         <div className={classes.tagsWrapper}>
           {data.getAllTags

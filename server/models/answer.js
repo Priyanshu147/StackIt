@@ -6,6 +6,8 @@ const schemaCleaner = require('../utils/schemaCleaner');
 // Define the Answer schema
 // It includes fields for author, body, comments, points, upvotedBy, downvotedBy, createdAt, and updatedAt
 // This schema is used to store answers to questions in the StackIt application 
+
+
 const answerSchema = new mongoose.Schema({
   author: {
     type: mongoose.Schema.Types.ObjectId,

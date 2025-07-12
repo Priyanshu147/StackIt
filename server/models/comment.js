@@ -24,4 +24,6 @@ const commentSchema = new mongoose.Schema({
 // Ensure the schema is cleaned up before saving
 schemaCleaner(commentSchema);
 
+// Export the Comment model
+// This allows the Comment model to be used in other parts of the application
 module.exports = mongoose.model('Comment', commentSchema);

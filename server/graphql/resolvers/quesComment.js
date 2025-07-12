@@ -19,7 +19,7 @@ module.exports = {
         if (!question) {
           throw new UserInputError(
             `Question with ID: ${quesId} does not exist in DB.`
-          );
+          ); 
         }
 
         question.comments.push({

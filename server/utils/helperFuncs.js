@@ -78,4 +78,4 @@ const ansRep = (answer, author) => {
   return author;
 };
 
-module.exports = { paginateResults, upvoteIt, downvoteIt, quesRep, ansRep };
+module.exports = { paginateResults, upvoteIt, downvoteIt, quesRep, ansRep }; 

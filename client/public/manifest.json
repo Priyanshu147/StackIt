@@ -1,0 +1,25 @@
+{
+  "short_name": "Stack It",
+  "name": "Stack It",
+  "icons": [
+    {
+      "src": "logostackit.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "logostackit.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "logostackit.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ede0f4",
+  "background_color": "#ede0f4"
+}

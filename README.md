@@ -7,4 +7,4 @@
 ## Hemang Patel  = hp4739315@gmail.com
 
 # Video Link
-[Video]([URL](https://drive.google.com/file/d/10sw0qk2LIGDMFa7i096kGbruiPrWq_RQ/view?usp=sharing))
+ [Video](https://drive.google.com/file/d/10sw0qk2LIGDMFa7i096kGbruiPrWq_RQ/view?usp=sharing)

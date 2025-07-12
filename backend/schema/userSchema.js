@@ -1,24 +1,22 @@
 import Joi from "joi";
 import { ALLOWED_PHONE_NO_DIGITS, NO_WINDOW_SIZE } from "../utils/constants.js";
 
+
 const UserValidationSchemas = {
-  addUserSchema: Joi.object({
-    name: Joi.string().min(3).max(30).required(),
-    password: Joi.string().min(6).required(),
-    phoneNo: Joi.string()
-      .optional()
-      .pattern(new RegExp(`^\\d{${ALLOWED_PHONE_NO_DIGITS}}$`))
-      .messages({
-        "string.base": "Phone number must be a string",
-        "string.empty": "Phone number is required",
-        "string.pattern.base": `Invalid phone number format. It must contain exactly ${ALLOWED_PHONE_NO_DIGITS} digits.`,
-      }),
-    organizationId: Joi.number().required().messages({
-      "number.base": "Invalid Organization Id",
+  signupSchema: Joi.object({
+    email: Joi.string().email().required().max(100).messages({
+      "string.email": "Invalid email format",
+      "string.empty": "Email is required",
     }),
-    isActive: Joi.bool().default(true).optional(),
-    groupId: Joi.number().required().messages({
-      "number.base": "Invalid Group ",
+    name: Joi.string().min(3).max(100).required().messages({
+      "string.empty": "Name is required",
+      "string.min": "Name must be at least 3 characters",
+      "string.max": "Name must be at most 100 characters",
+    }),
+    password: Joi.string().min(6).max(200).required().messages({
+      "string.empty": "Password is required",
+      "string.min": "Password must be at least 6 characters",
+      "string.max": "Password must be at most 200 characters",
     }),
   }),
 
@@ -36,8 +34,8 @@ const UserValidationSchemas = {
   }),
 
   loginUserSchema: Joi.object({
-    name: Joi.string().min(3).max(30).required(),
-    password: Joi.string().min(6).required(),
+    email: Joi.string().min(3).max(100).required(),
+    password: Joi.string().min(6).max(200).required(),
   }),
 
   forgotPasswordSchema: Joi.object({
@@ -54,22 +52,19 @@ const UserValidationSchemas = {
   }),
 
   updateUserSchema: Joi.object({
-    name: Joi.string().min(3).max(30).required(),
-    password: Joi.string().min(6).allow(""),
-    phoneNo: Joi.string()
-      .optional()
-      .pattern(new RegExp(`^\\d{${ALLOWED_PHONE_NO_DIGITS}}$`))
-      .messages({
-        "string.base": "Phone number must be a string",
-        "string.empty": "Phone number is required",
-        "string.pattern.base": `Invalid phone number format. It must contain exactly ${ALLOWED_PHONE_NO_DIGITS} digits.`,
-      }),
-    organizationId: Joi.number().required().messages({
-      "number.base": "Invalid Organization Id",
+    userID: Joi.number().required().messages({
+      "number.base": "Invalid User Id",
     }),
-    isActive: Joi.bool().default(true).optional(),
-    groupId: Joi.number().required().messages({
-      "number.base": "Invalid Group ",
+
+     name: Joi.string().min(3).max(100).optional().messages({
+      "string.min": "Name must be at least 3 characters",
+      "string.max": "Name must be at most 100 characters",
+    }),
+    about: Joi.string().max(400).allow("", null).optional().messages({
+      "string.max": "About must be at most 400 characters",
+    }),
+    image: Joi.string().allow("", null).optional().messages({
+      "string.base": "Image must be a string",
     }),
   }),
 

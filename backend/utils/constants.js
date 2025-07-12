@@ -47,14 +47,12 @@ export const BASE_ROUTE = {
 //TABLE NAMES
 export const TABLES = {
   USER: "UserMaster",
-  ORGANIZATION: "OrganizationMaster",
+  QUESTIONMASTER: "QuestionMaster",
+  ANSWERMASTER: "AnswerMaster",
+  TAGMASTER: "TagMaster",
+  TAGQUESTION: "TagQuestionMapping",
   ADMIN: "AdminMaster",
-  FILE: "FileMaster",
-  REQUEST_LOG: "RequestLogMaster",
-  CHAT_DELETE: "ChatDeleteMaster",
-  BROADCAST: "BroadcastMaster",
-  GROUP: "GroupMaster",
-  CALL_LOG:"CallLogMaster"
+ 
 };
 
 //FIREBASE COLLECTION NAMES
@@ -79,7 +77,7 @@ export const USER_ROUTES = {
   GET_ACCESS_TOKEN: "/accessToken",
   DELETE_USER: "/user/:id",
   DELETE_USERS: "/users",
-  UPDATE_USER: "/updateUser/:id",
+  UPDATE_USER: "/updateUser",
   GET_USER_BY_NAME_FOR_APP: "/userByNameForApp",
   GET_USER_BY_ID_FOR_APP: "/userByIdForApp/:id",
   GET_USER_BY_ORGANIZATION_ID: "/userByOrganizationId/:id",
@@ -241,7 +239,7 @@ export const REQUEST_STATUS = ["accepted", "declined", "pending"];
 
 export const USER_UPLOAD_CONFIG = {
   uploadPath: "uploads/user/",
-  fileSizeLimit: 5 * 1024 * 1024,
+  fileSizeLimit: 100 * 1024 * 1024,
   allowedTypes: /jpeg|jpg|png/,
   invalidTypeMessage: "Only images (jpeg, jpg, png) are allowed",
 };

@@ -33,6 +33,7 @@ export const getAuthToken = (userID) => {
 
 // TO REGENERATE ACCESSTOKEN IN CASE IT GOT EXPIRED
 export const getAccessToken = (userID) => {
+
   const accessToken = jwt.sign(
     { _id: userID.toString() },
     process.env.USER_ACCESS_TOKEN_SECRET,

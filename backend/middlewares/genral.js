@@ -35,12 +35,13 @@ const decodeTokens = async (accessToken, refreshToken, strictMode = true) => {
 
   // If accessToken is valid and matches refreshToken -> return user
   if (accessTokenDecoded && accessTokenDecoded._id === userId) {
-    return await AdminService.getAdminHandlerForFetchProfile(userId);
+    return await UserService.getUserHandler(userId);
   }
 
   // Otherwise, issue new access token using refreshToken
-  const data = await AdminService.getAdminHandlerForFetchProfile(userId);
-  data.newAccessToken = await AdminService.getAccessTokenHandler(data);
+  const data = await UserService.getUserHandler(userId);
+  console.log("User Data:", data);
+  data.newAccessToken = await UserService.getAccessTokenHandler(data.data.UserID);
 
   return data;
 };

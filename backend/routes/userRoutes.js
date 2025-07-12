@@ -16,7 +16,8 @@ const upload = createMulterInstance(USER_UPLOAD_CONFIG);
 // Public Routes
 router.post(
   USER_ROUTES.SIGNUP,
-  catchAsync(validateSchema(UserValidationSchemas.addUserSchema)),
+ 
+  catchAsync(validateSchema(UserValidationSchemas.signupSchema)),
   catchAsync(UserController.signupUserHandler)
 );
 router.post(
@@ -50,30 +51,18 @@ router.post(
   catchAsync(UserController.logOutUserHandler)
 );
 
-router.post(
-  USER_ROUTES.GET_USERS,
-  catchAsync(auth),
-  catchAsync(validateSchema(UserValidationSchemas.getUsersSchema, true)),
-  catchAsync(UserController.getAllUsersHandler)
-);
+
 router.get(
   USER_ROUTES.GET_USER,
   catchAsync(auth),
   catchAsync(validateSchema(UserValidationSchemas.getUserByIdSchema, true)),
   catchAsync(UserController.getUserHandler)
 );
-router.post(
-  USER_ROUTES.ADD_USER,
-  catchAsync(auth),
-  catchAsync(upload.single("image")),
-  catchAsync(validateSchema(UserValidationSchemas.addUserSchema)),
-  catchAsync(UserController.addUserHandler)
-);
+
 router.patch(
   USER_ROUTES.UPDATE_USER,
   catchAsync(auth),
   catchAsync(upload.single("image")),
-  catchAsync(validateSchema(UserValidationSchemas.getUserByIdSchema, true)),
   catchAsync(validateSchema(UserValidationSchemas.updateUserSchema)),
   catchAsync(UserController.updateUserHandler)
 );
@@ -90,79 +79,6 @@ router.delete(
   catchAsync(UserController.deleteUsersHandler)
 );
 
-router.post(
-  USER_ROUTES.RESET_DEVICE,
-  catchAsync(auth),
-  catchAsync(validateSchema(UserValidationSchemas.resetDeviceSchema)),
-  catchAsync(UserController.resetDeviceHandler)
-);
 
-//for APP
-router.post(
-  USER_ROUTES.GET_USER_BY_NAME_FOR_APP,
-  catchAsync(validateSchema(UserValidationSchemas.getUserByNameForAppSchema)),
-  catchAsync(UserController.getUserByNameForAppHandler)
-);
-router.get(
-  USER_ROUTES.GET_USER_BY_ID_FOR_APP,
-  catchAsync(
-    validateSchema(UserValidationSchemas.getUserByIdForAppSchema, true)
-  ),
-  catchAsync(UserController.getUserByIdForAppHandler)
-);
-
-router.get(
-  USER_ROUTES.GET_USER_BY_ORGANIZATION_ID,
-  catchAsync(
-    validateSchema(UserValidationSchemas.getUsersByOrganizationIdSchema, true)
-  ),
-  catchAsync(UserController.getUsersByOrganizationIdHandler)
-);
-
-
-// router.post(
-//   USER_ROUTES.GET_USERS_BY_MULTIPLE_ORGANIZATION_IDS,
-//   catchAsync(
-//     validateSchema(
-//       UserValidationSchemas.getUsersByMultipleOrganizationIdsSchema
-//     )
-//   ),
-//   catchAsync(UserController.getUsersByMultipleOrganizationIdsHandler)
-// );
-
-router.post(
-  USER_ROUTES.GET_USERS_FOR_ORGANIZATIONS,
-  catchAsync(
-    validateSchema(UserValidationSchemas.getUsersForOrganizationsSchema)
-  ),
-  catchAsync(UserController.getUsersForOrganizationsHandler)
-);
-
-router.post(
-  USER_ROUTES.GET_USER_BY_GROUP_IDS,
-  catchAsync(
-    validateSchema(UserValidationSchemas.getuserByGroupIdsSchema)
-  ),
-  catchAsync(UserController.getuserByGroupIdsHandler)
-);
-
-router.post(
-  USER_ROUTES.UPDATE_USER_FOR_APP,
-  catchAsync(upload.single("image")),
-  catchAsync(validateSchema(UserValidationSchemas.updateUserSchemaForApp)),
-  catchAsync(UserController.updateUserHandlerForApp)
-);
-
-router.post(
-  USER_ROUTES.USER_LOGOUT,
-  catchAsync(validateSchema(UserValidationSchemas.userLogoutSchema)),
-  catchAsync(UserController.userLogoutHandler)
-);
-
-router.post(
-  USER_ROUTES.USER_DEVICE_TOKEN,
-  catchAsync(validateSchema(UserValidationSchemas.userDeviceTokenSchema)),
-  catchAsync(UserController.userDeviceTokenHandler)
-);
 
 export default router;

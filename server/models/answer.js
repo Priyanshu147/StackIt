@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const commentSchema = require('./comment').schema;
 const schemaCleaner = require('../utils/schemaCleaner');
 
+
+// Define the Answer schema
+// It includes fields for author, body, comments, points, upvotedBy, downvotedBy, createdAt, and updatedAt
+// This schema is used to store answers to questions in the StackIt application 
 const answerSchema = new mongoose.Schema({
   author: {
     type: mongoose.Schema.Types.ObjectId,
@@ -41,6 +45,10 @@ const answerSchema = new mongoose.Schema({
   },
 });
 
+// Ensure the schema is cleaned up before saving
+// This function removes any unnecessary fields or properties from the schema
 schemaCleaner(answerSchema);
 
+
+// Export the Answer model 
 module.exports = mongoose.model('Answer', answerSchema);

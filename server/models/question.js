@@ -3,6 +3,9 @@ const commentSchema = require('./comment').schema;
 const answerSchema = require('./answer').schema;
 const schemaCleaner = require('../utils/schemaCleaner');
 
+
+// Define the Question schema
+// It includes fields for author, title, body, tags, comments, answers, points,
 const questionSchema = new mongoose.Schema({
   author: {
     type: mongoose.Schema.Types.ObjectId,
@@ -56,6 +59,8 @@ const questionSchema = new mongoose.Schema({
   },
 });
 
+// Ensure the schema is cleaned up before saving
 schemaCleaner(questionSchema);
 
+// Export the Question model
 module.exports = mongoose.model('Question', questionSchema);

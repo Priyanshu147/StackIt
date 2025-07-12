@@ -1,0 +1,86 @@
+.section-table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.section-table th,
+.section-table td {
+    padding: 1.5rem 1.7rem;
+    text-align: left;
+    border: 1px solid var(--color-tertiary);
+}
+
+.section-table th {
+    border: 1px solid var(--color-tertiary);
+    font-weight: 500;
+}
+
+.section-table thead {
+    color: var(--tertiary-font-color);
+    font-size: 1.35rem;
+    text-transform: capitalize;
+    background-color: var(--color-secondary);
+}
+
+.section-table thead tr th:active {
+    transition: all 0.1s;
+    background-color: var(--color-tertiary);
+    user-select: none;
+}
+
+.section-table thead tr th i {
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+}
+
+.section-table tbody tr:hover {
+    background-color: var(--color-secondary);
+}
+
+
+.section-table tbody tr td i {
+    color: #979ca7;
+    margin-right: 0.3rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.section-table tbody tr td i:hover {
+    background-color: #0001;
+}
+
+.section-table td {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.check-box_cell input[type="checkbox"] {
+    width: 1.4rem;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+input[type="checkbox"]:disabled {
+    cursor: auto;
+}
+
+.check-box_cell {
+    text-align: center !important;
+    width: 5%;
+}
+
+i .delete {
+    color: red;
+}
+
+.td-img {
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 0.8rem;
+}

@@ -1,0 +1,77 @@
+.nav-container {
+    padding: 1.6rem 2.7rem;
+    font-size: var(--medium-font-size);
+    background-color: var(--color-white);
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    border-bottom: 1px solid #0001;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-container--ul {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    flex-grow: 1;
+    color: var(--tertiary-font-color);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-container--li {
+    list-style: none;
+}
+
+.nav-container--li>i {
+    color: #0004;
+    font-size: 1.2rem;
+}
+
+.container-img {
+    margin-left: auto;
+}
+
+.container-img>img {
+    width: 2.5rem;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.container-img>img:active {
+    scale: 0.95;
+}
+
+a,
+a:visited,
+a:link {
+    text-decoration: none;
+}
+
+.action-ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-img {
+    width: 4rem;
+}
+
+.profile-img:hover+div {
+    display: block;
+}
+
+.li-card {
+    position: absolute;
+    width: 20rem;
+    height: 5rem;
+    top: 3rem;
+    z-index: 2000;
+    display: none;
+}
+
+.li-card:hover {
+    display: block;
+}

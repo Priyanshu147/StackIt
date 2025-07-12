@@ -1,0 +1,20 @@
+.table-action {
+    padding: 2rem;
+    font-size: var(--default-font-size);
+    border-radius: 1rem 1rem 0 0;
+    font-weight: 500;
+    border: 1px solid var(--color-tertiary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.table-action>h3 {
+    flex-grow: 1;
+}
+
+.table-switch {
+    font-size: 1.3rem;
+    color: var(--secondary-font-color);
+}

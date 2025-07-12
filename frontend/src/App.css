@@ -1,0 +1,196 @@
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2.8rem;
+    height: 100%;
+}
+
+.status-container {
+    padding: 0.4rem 0.8rem;
+    font-size: var(--small-font-size);
+    border-radius: 0.5rem;
+    word-break: keep-all;
+}
+
+.status-active {
+    background-color: #eafff1;
+    border: 1px solid #c0f4d2;
+    color: #17c653;
+}
+
+.status-deleted {
+    background-color: #ffeef3;
+    border: 1px solid #fec6d4;
+    color: #f8285a;
+}
+
+/* */
+.status-completed {
+    background-color: #eafff1;
+    border: 1px solid #c0f4d2;
+    color: #17c653;
+}
+
+/* Cancelled - Red */
+.status-cancelled {
+    background-color: #ffeef3;
+    border: 1px solid #fec6d4;
+    color: #f8285a;
+}
+
+/* Completed - Blue */
+.status-ongoing {
+    background-color: #e0f0ff;
+    border: 1px solid #add8e6;
+    color: #007bff;
+}
+
+/* Pending - Yellow */
+.status-pending {
+    background-color: #fff6e5;
+    border: 1px solid #ffd48a;
+    color: #ff9800;
+}
+
+/* Unknown - Gray (fallback) */
+.status-unknown {
+    background-color: #f0f0f0;
+    border: 1px solid #d6d6d6;
+    color: #666;
+}
+
+.spinner {
+    border: 0.5rem solid #0001;
+    width: 3rem;
+    height: 3rem;
+    border-left-color: var(--color-main);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.right {
+    text-align: right !important;
+}
+
+.left {
+    text-align: left !important;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+i:active {
+    scale: 0.9;
+}
+
+.row {
+    display: flex;
+    gap: 2rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.row>* {
+    flex: 1;
+}
+
+.row>.col-1 {
+    flex: 1
+}
+
+.row>.col-2 {
+    flex: 2;
+}
+
+::-webkit-scrollbar {
+    width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-tertiary);
+}
+
+/* option {
+    font-size: 1.5rem;
+} */
+
+.col-1-3 {
+    width: 32.1% !important;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #0003;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    background-color: #e2e2e2;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--color-main);
+    border-color: var(--color-main);
+}
+
+.status-accepted {
+    background-color: #eafff1;
+    border: 1px solid #c0f4d2;
+    color: #17c653;
+}
+
+.status-rejected {
+    background-color: #ffeef3;
+    border: 1px solid #fec6d4;
+    color: #f8285a;
+}
+
+.status-pending {
+    background-color: #e0f0ff;
+    border: 1px solid #add8e6;
+    color: #007bff;
+}
+
+.highlight-text {
+    color: var(--color-main);
+}
+
+.MuiTypography-root {
+    font-size: 1.4rem !important;
+}
+
+.MuiSelect-select {
+    padding: 0.8rem 1.4rem !important;
+    font-size: 1.4rem !important;
+    font-family: inherit !important;
+    margin-top: 0.5rem !important;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+}

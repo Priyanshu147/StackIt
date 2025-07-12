@@ -1,0 +1,111 @@
+.btn {
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--color-main);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--color-white);
+    padding: 0.7rem 1.6rem;
+    outline: none;
+    transition: all .1s;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--color-main-dark);
+    outline: none;
+}
+
+.btn:focus-visible {
+    outline-offset: 3px;
+    outline: 2px solid var(--color-main);
+}
+
+.btn-success {
+    background-color: #59b159;
+}
+
+.btn-success:focus-visible {
+    outline: 2px solid #59b159;
+}
+
+.btn-success:hover {
+    background-color: #479b4b;
+}
+
+.btn-success.btn-outline {
+    border: 1px solid currentColor;
+    background-color: transparent;
+    color: #59b159;
+}
+
+.btn-success.btn-outline:hover {
+    background-color: #59b159;
+    color: var(--color-white);
+}
+
+.btn-cancle {
+    background-color: #ed5668;
+}
+
+.btn-cancle:focus-visible {
+    outline: 2px solid #ed5668;
+}
+
+.btn-cancle:hover {
+    background-color: #e43246;
+}
+
+.btn-cancle.btn-outline {
+    border: 1px solid currentColor;
+    background-color: transparent;
+    color: #ed5668;
+}
+
+.btn-cancle.btn-outline:hover {
+    background-color: #ed5668;
+    color: var(--color-white);
+}
+
+.btn-small {
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+}
+
+.btn-small:not(:disabled):active {
+    scale: 0.95;
+}
+
+.btn-large {
+    padding: 1.3rem 2.3rem;
+    width: 100%;
+    font-size: 2.3rem;
+}
+
+.btn-outline {
+    border: 1px solid currentColor;
+    background-color: transparent;
+    color: var(--color-main);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-main-dark);
+    color: var(--color-white);
+}
+
+.round {
+    border-radius: 50%;
+    padding: 0;
+    width: 2rem;
+    aspect-ratio: 1/1;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    color: #94a3b8c9 !important;
+    background-color: #0001 !important;
+}

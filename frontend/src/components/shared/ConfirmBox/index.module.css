@@ -1,0 +1,23 @@
+.confirm-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+.container-ctrl {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.container-ctrl>button {
+    flex-grow: 1;
+}
+
+.confirm-container>.message {
+    font-size: 1.8rem;
+    line-height: 3rem;
+}

@@ -1,0 +1,49 @@
+.title-container {
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+
+.title-container .container-title {
+    font-size: var(--large-font-size);
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--color-main);
+}
+
+.title-container .divider {
+    width: 40%;
+    float: inline-start;
+    border: 2px solid var(--color-main);
+}
+
+.title-container--small {
+    margin-bottom: 2.5rem;
+}
+
+.title-container--small .container-title {
+    font-size: var(--medium-font-size);
+    margin: 0;
+    margin-bottom: 0.1rem;
+    color: var(--color-main);
+}
+
+.title-container--small .divider {
+    width: 40%;
+    float: inline-start;
+    border: 1px solid var(--color-main);
+}
+
+.title-container--animate>.divider {
+    animation: strach 0.4s cubic-bezier(.42, -0.93, .63, 1.95);
+}
+
+@keyframes strach {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 40%;
+    }
+}

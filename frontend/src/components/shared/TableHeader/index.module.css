@@ -1,0 +1,27 @@
+.table-header {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.header-content>h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.header-content>p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--tertiary-font-color);
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.btn-container>button {
+    min-width: max-content;
+}

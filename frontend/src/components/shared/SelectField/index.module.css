@@ -1,0 +1,40 @@
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.input {
+    font-size: 1.4rem;
+    font-family: inherit;
+    width: 100%;
+    padding: 0.9rem 1.4rem;
+    border: 1px solid #0002;
+    border-radius: 0.8rem;
+}
+
+.input:focus {
+    border: 1px solid green;
+    outline: none;
+    box-shadow: 0 0 0.6rem #0001;
+}
+
+.input-invalid {
+    border: 1px solid orangered !important;
+}
+
+.input::placeholder {
+    font-size: 1.4rem;
+    color: var(--secondary-font-color);
+    text-transform: capitalize;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.validation-msg {
+    color: orangered;
+}
